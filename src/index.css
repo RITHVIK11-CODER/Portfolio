@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --bg: #0b0b0c;
+  --surface: #111214;
+  --surface-light: #18191c;
+
+  --text: #f5f2ea;
+  --text-muted: #a7a5a0;
+
+  --accent: #ff6b35;
+  --accent-light: #ff8a5b;
+
+  --border: #25262a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.font-display {
+  font-family: "Sora", sans-serif;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.bg-surface {
+  background: var(--surface);
+}
+
+.border-subtle {
+  border-color: var(--border);
+}
+
+/* ================================
+   PERFORMANCE + MOBILE POLISH
+================================ */
+
+html {
+  scroll-padding-top: 90px;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+/* Prevent accidental horizontal movement */
+body {
+  overflow-x: hidden;
+}
+
+/* Smoother image rendering */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* 3D canvas */
+.portrait-stage canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* Better touch behavior */
+button,
+a {
+  touch-action: manipulation;
+}
+
+/* Remove tap highlight */
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile spacing */
+@media (max-width: 767px) {
+  section {
+    overflow: hidden;
+  }
+
+  .portrait-stage {
+    max-width: 480px;
+    margin-inline: auto;
+  }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .portrait-stage {
+    width: 105%;
+    margin-left: -2.5%;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS
+============================================================ */
+
+:root {
+  --bg: #0b0b0c;
+  --surface: #111214;
+  --surface-light: #17181a;
+
+  --text: #f5f2ea;
+  --text-muted: #a7a5a0;
+  --text-dim: #55565a;
+
+  --accent: #ff6b35;
+  --accent-light: #ff8a5b;
+
+  --border: #25262a;
+}
+
+/* ============================================================
+   RESET
+============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+
+  background: var(--bg);
+  color: var(--text);
+
+  font-family: "Space Grotesk", sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   TYPOGRAPHY
+============================================================ */
+
+.font-display {
+  font-family: "Sora", sans-serif;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* ============================================================
+   SELECTION
+============================================================ */
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* ============================================================
+   LINKS / BUTTONS
+============================================================ */
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ============================================================
+   SCROLLBAR
+============================================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2b2c2f;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ============================================================
+   PORTRAIT
+============================================================ */
+
+.portrait-stage {
+  isolation: isolate;
+}
+
+/* ============================================================
+   IMAGE RENDERING
+============================================================ */
+
+img {
+  max-width: 100%;
+}
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 767px) {
+  .portrait-stage {
+    max-width: 480px;
+    margin-inline: auto;
+  }
+}
+
+/* ============================================================
+   VERY SMALL DEVICES
+============================================================ */
+
+@media (max-width: 380px) {
+  .portrait-stage {
+    width: 105%;
+    margin-left: -2.5%;
+  }
+}
